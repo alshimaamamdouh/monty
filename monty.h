@@ -1,10 +1,17 @@
 #ifndef MONTY_H
 #define MONTY_H
+#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/types.h>
-#include <string.h>
 #include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <limits.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <string.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,4 +40,16 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+void func_exc(char *opcode, stack_t **stack, unsigned int line_number);
+void free_stack(stack_t *head);
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _pin(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+int CheckStringNumber(char src);
+ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 #endif
