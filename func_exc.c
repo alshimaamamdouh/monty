@@ -12,7 +12,7 @@ int func_exc(char *opcode, stack_t **stack, unsigned int line_number)
 {
 int i = 0;
 char *str_delim;
-char *delim = " \n\t";
+char *delim = " $\t\n";
 instruction_t instructions[] = {
 {"push", _push},
 {"pall", _pall},
