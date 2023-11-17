@@ -1,5 +1,4 @@
 #include "monty.h"
-#define _GNU_SOURCE
 /**
  * main - main function
  * @argc: number of args
