@@ -11,7 +11,7 @@ int div_res = 0;
 stack_t *node;
 if (*stack == NULL || (*stack)->next == NULL)
 {
-fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 free_stack(*stack);
 exit(EXIT_FAILURE);
 }
