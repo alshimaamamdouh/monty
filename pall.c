@@ -12,7 +12,7 @@ stack_t *temp = *stack;
 (void) line_number;
 while (temp != NULL)
 {
-fprintf(stdout, "%d\n", temp->n);
+printf("%d\n", temp->n);
 temp = temp->next;
 }
 }
