@@ -41,13 +41,9 @@ else
 }
 i++;
 }
-if (!(instructions[i].opcode && str_delim))
-{
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, str_delim);
 free(opcode);
 free_stack(*stack);
-exit(EXIT_FAILURE);
-}
 return (1);
 }
 
