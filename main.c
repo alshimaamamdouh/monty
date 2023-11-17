@@ -27,12 +27,17 @@ if (file == NULL)
 fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 exit(EXIT_FAILURE);
 }
-while ((read_line = getline(&line, &len_line, file)) != -1)
+while (read_line > 0)
 {
-if (func_exc(line, &stack, line_number))
-continue;
+line = NULL;
+read_line = getline(&line, &len_line, file);
+bus.content = line;
 line_number++;
-
+if (read_line > 0)
+{
+func_exc(line, &stack, line_number);
+}
+free(line);
 }
 free_stack(stack);
 fclose(file);

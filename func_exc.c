@@ -34,6 +34,9 @@ if (strcmp(str_delim, instructions[i].opcode) == 0)
 instructions[i].f(stack, line_number);
 return (0);
 }
+else
+{
+}
 i++;
 }
 if (!(instructions[i].opcode && str_delim))
