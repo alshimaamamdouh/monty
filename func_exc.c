@@ -21,7 +21,8 @@ instruction_t instructions[] = {
 {"pop", _pop},
 {"swap", _swap},
 {"add", _add},
-{"sub", _sub}
+{"sub", _sub},
+{"div", _div}
 };
 str_delim = strtok(opcode, delim);
 bus.arg = strtok(NULL, " $\n\t");
