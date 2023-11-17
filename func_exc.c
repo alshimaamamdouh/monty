@@ -20,7 +20,8 @@ instruction_t instructions[] = {
 {"nop", _nop},
 {"pop", _pop},
 {"swap", _swap},
-{"add", _add}
+{"add", _add},
+{"sub", _sub}
 };
 str_delim = strtok(opcode, delim);
 bus.arg = strtok(NULL, " $\n\t");
