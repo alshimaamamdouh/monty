@@ -17,7 +17,7 @@ exit(EXIT_FAILURE);
 }
 i = (*stack)->next->n;
 j = (*stack)->n;
-if (i >= j)
+if (i > j)
 sub_res = i - j;
 
 else
