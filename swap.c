@@ -14,12 +14,9 @@ fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 free_stack(*stack);
 exit(EXIT_FAILURE);
 }
-fprintf(stderr, "in\n");
 first = *stack;
-fprintf(stderr, "middle\n");
 second = first->next;
 first->next = second->next;
 second->next = first;
 *stack = second;
-fprintf(stderr, "end");
 }
