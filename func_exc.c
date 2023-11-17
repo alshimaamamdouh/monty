@@ -23,6 +23,7 @@ instruction_t instructions[] = {
 {"add", _add}
 };
 str_delim = strtok(opcode, delim);
+bus.arg = strtok(NULL, " $\n\t");
 if (str_delim && str_delim[0] == '#')
 return (0);
 
