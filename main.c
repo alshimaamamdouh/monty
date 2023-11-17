@@ -27,7 +27,7 @@ exit(EXIT_FAILURE);
 }
 while ((read_line = getline(&line, &len_line, file)) != -1)
 {
-if(func_exc(line, &stack, line_number))
+if (func_exc(line, &stack, line_number))
 continue;
 line_number++;
 
