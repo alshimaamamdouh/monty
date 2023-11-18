@@ -8,7 +8,7 @@
  *
  * Return: 0
  */
-int func_exc(char *opcode, stack_t **stack, unsigned int line_number)
+void func_exc(char *opcode, stack_t **stack, unsigned int line_number)
 {
 int i = 0;
 char *str_delim;
@@ -27,24 +27,22 @@ instruction_t instructions[] = {
 str_delim = strtok(opcode, delim);
 bus.arg = strtok(NULL, " $\n\t");
 if (str_delim && str_delim[0] == '#')
-return (0);
+return;
 
 while (instructions[i].opcode && str_delim)
 {
 if (strcmp(str_delim, instructions[i].opcode) == 0)
 {
 instructions[i].f(stack, line_number);
-return (0);
+return;
 }
-else
-{
-}
+
 i++;
 }
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, str_delim);
 free(opcode);
 free_stack(*stack);
-return (1);
+exit(EXIT_FAILURE);
 }
 
 

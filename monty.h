@@ -55,7 +55,7 @@ typedef struct bus_s
 }  bus_t;
 extern bus_t bus;
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-int func_exc(char *opcode, stack_t **stack, unsigned int line_number);
+void func_exc(char *opcode, stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *head);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
