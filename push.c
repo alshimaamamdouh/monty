@@ -6,13 +6,11 @@
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-int n, j = 0, flag = 0;
-if (bus.arg[0] == '-')
-j++;
-for (; bus.arg[j] != '\0'; j++)
+int num, i = 0, flag = 0;
+while (bus.arg[i])
 {
-flag =  CheckStringNumber(bus.arg[j]);
-
+flag =  CheckStringNumber(bus.arg[i]);
+i++;
 }
 if (bus.arg)
 {
@@ -35,7 +33,7 @@ free(bus.content);
 free_stack(*stack);
 exit(EXIT_FAILURE);
 }
-n = atoi(bus.arg);
-_addnode(stack, n);
+num = atoi(bus.arg);
+_addnode(stack, num);
 }
 
