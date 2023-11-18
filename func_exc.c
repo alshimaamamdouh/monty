@@ -23,7 +23,8 @@ instruction_t instructions[] = {
 {"add", _add},
 {"sub", _sub},
 {"div", _div},
-{"mul", _mul}
+{"mul", _mul},
+{"mod", _mod}
 };
 str_delim = strtok(opcode, delim);
 bus.arg = strtok(NULL, " \n\t");
