@@ -15,6 +15,12 @@ fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 free_stack(*stack);
 exit(EXIT_FAILURE);
 }
+if ((*stack)->n == 0)
+{
+fprintf(stderr, "L%d: division by zero\n", line_number);
+free_stack(*stack);
+exit(EXIT_FAILURE);
+}
 div_res = ((*stack)->next->n) / ((*stack)->n);
 node = *stack;
 node->next->n = div_res;
