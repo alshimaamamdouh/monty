@@ -9,7 +9,7 @@ void _div(stack_t **stack, unsigned int line_number)
 {
 int div_res = 0;
 stack_t *node;
-if (*stack == NULL || (*stack)->next == NULL || (*stack)->n == 0)
+if (*stack == NULL || (*stack)->next == NULL)
 {
 fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 free_stack(*stack);
