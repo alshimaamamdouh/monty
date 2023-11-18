@@ -13,7 +13,7 @@ FILE *file;
 char *line = NULL;
 size_t len_line = 0;
 ssize_t read_line = 1;
-unsigned int line_number = 1;
+unsigned int line_number = 0;
 stack_t *stack = NULL;
 if (argc != 2)
 {
