@@ -10,7 +10,7 @@ if (src == '\0')
 return (0);
 
 if (src < '0' || src > '9')
-return (0);
-
 return (1);
+
+return (0);
 }
