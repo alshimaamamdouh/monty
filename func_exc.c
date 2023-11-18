@@ -12,7 +12,7 @@ void func_exc(char *opcode, stack_t **stack, unsigned int line_number)
 {
 int i = 0;
 char *str_delim;
-char *delim = " $\t\n";
+char *delim = " \t\n";
 instruction_t instructions[] = {
 {"push", _push},
 {"pall", _pall},
@@ -25,7 +25,7 @@ instruction_t instructions[] = {
 {"div", _div}
 };
 str_delim = strtok(opcode, delim);
-bus.arg = strtok(NULL, " $\n\t");
+bus.arg = strtok(NULL, " \n\t");
 if (str_delim && str_delim[0] == '#')
 return;
 
