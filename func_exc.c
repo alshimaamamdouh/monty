@@ -24,7 +24,8 @@ instruction_t instructions[] = {
 {"sub", _sub},
 {"div", _div},
 {"mul", _mul},
-{"mod", _mod}
+{"mod", _mod},
+{NULL, NULL}
 };
 str_delim = strtok(opcode, delim);
 info.arg = strtok(NULL, " \n\t");

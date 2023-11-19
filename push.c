@@ -7,6 +7,8 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 int num, i = 0, flag = 0;
+char *token = strtok(info.arg, ";");
+strcpy(info.arg, token);
 if (info.arg)
 {
 if (info.arg[0] == '-')
