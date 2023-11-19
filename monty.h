@@ -66,7 +66,7 @@ void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
-int CheckStringNumber(char *src);
+int CheckStringNumber(char src);
 void _addnode(stack_t **stack, int data);
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 #endif
