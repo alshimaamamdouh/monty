@@ -9,10 +9,11 @@ int is_line_blank(const char *line)
 while (*line != '\0')
 {
 if (!isspace((unsigned char)*line))
-return 0; 
+return (0);
+
 line++;
 }
-return 1;
+return (1);
 }
 
 /**
