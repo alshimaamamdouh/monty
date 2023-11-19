@@ -38,7 +38,6 @@ if (strcmp(str_delim, instructions[i].opcode) == 0)
 instructions[i].f(stack, line_number);
 return;
 }
-
 i++;
 }
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, str_delim);
