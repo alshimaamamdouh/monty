@@ -39,21 +39,19 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**
- * struct bus_s - variables -args, file, line content
+ * struct info_s - information
  * @arg: value
  * @file: pointer to monty file
  * @content: line content
- * @lifi: flag change stack <-> queue
  * Description: carries values through the program
  */
-typedef struct bus_s
+typedef struct info_s
 {
 	char *arg;
 	FILE *file;
 	char *content;
-	int lifi;
-}  bus_t;
-extern bus_t bus;
+}  info_t;
+extern info_t info;
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 void func_exc(char *opcode, stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *head);
@@ -68,7 +66,7 @@ void _sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void _mul(stack_t **stack, unsigned int line_number);
 void _mod(stack_t **stack, unsigned int line_number);
-int CheckStringNumber(char src);
+int CheckStringNumber(char *src);
 void _addnode(stack_t **stack, int data);
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
 #endif

@@ -6,34 +6,29 @@
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-int num, i = 0, flag = 0;
-while (bus.arg[i])
+int num;
+if (info.arg)
 {
-flag =  CheckStringNumber(bus.arg[i]);
-i++;
-}
-if (bus.arg)
+if(CheckStringNumber(info.arg))
 {
-if (flag == 1)
-{
-
 fprintf(stderr, "L%d: usage: push integer\n", line_number);
-fclose(bus.file);
-free(bus.content);
+fclose(info.file);
+free(info.content);
 free_stack(*stack);
 exit(EXIT_FAILURE);
-
+}
+else
+{
+num = atoi(info.arg);
+_addnode(stack, num);
 }
 }
 else
 {
 fprintf(stderr, "L%d: usage: push integer\n", line_number);
-fclose(bus.file);
-free(bus.content);
+fclose(info.file);
+free(info.content);
 free_stack(*stack);
 exit(EXIT_FAILURE);
 }
-num = atoi(bus.arg);
-_addnode(stack, num);
 }
-

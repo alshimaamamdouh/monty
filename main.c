@@ -1,5 +1,5 @@
 #include "monty.h"
-bus_t bus = {NULL, NULL, NULL, 0};
+info_t info = {NULL, NULL, NULL};
 /**
  * main - main function
  * @argc: number of args
@@ -21,7 +21,7 @@ fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
 file = fopen(argv[1], "r");
-bus.file = file;
+info.file = file;
 if (file == NULL)
 {
 fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -31,7 +31,7 @@ while (read_line > 0)
 {
 line = NULL;
 read_line = getline(&line, &len_line, file);
-bus.content = line;
+info.content = line;
 line_number++;
 if (read_line > 0)
 {

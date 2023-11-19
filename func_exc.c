@@ -27,7 +27,7 @@ instruction_t instructions[] = {
 {"mod", _mod}
 };
 str_delim = strtok(opcode, delim);
-bus.arg = strtok(NULL, " \n\t");
+info.arg = strtok(NULL, " \n\t");
 if (str_delim && str_delim[0] == '#')
 return;
 
@@ -46,5 +46,3 @@ free(opcode);
 free_stack(*stack);
 exit(EXIT_FAILURE);
 }
-
-

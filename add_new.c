@@ -12,7 +12,7 @@ new_node = malloc(sizeof(stack_t));
 if (!new_node)
 
 {
-printf("Error\n");
+fprintf(stderr, "Error\n");
 exit(0);
 
 }
