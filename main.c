@@ -22,10 +22,8 @@ if (argc != 2)
 fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
-
 file = fopen(argv[1], "r");
 info.file = file;
-
 if (file == NULL)
 {
 fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
@@ -37,14 +35,11 @@ while (read_line > 0)
 line = NULL;
 read_line = getline(&line, &len_line, file);
 line_number++;
-
 if (read_line > 0 && !is_line_blank(line))
 {
 trim_spaces(line);
-
 func_exc(line, &stack, line_number);
 }
-
 free(line);
 }
 
