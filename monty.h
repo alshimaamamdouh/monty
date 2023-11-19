@@ -69,4 +69,6 @@ void _mod(stack_t **stack, unsigned int line_number);
 int CheckStringNumber(char src);
 void _addnode(stack_t **stack, int data);
 ssize_t my_getline(char **lineptr, size_t *n, FILE *stream);
+int is_line_blank(const char *line);
+void trim_spaces(char *str);
 #endif
