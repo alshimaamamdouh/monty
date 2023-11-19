@@ -28,6 +28,24 @@ instruction_t instructions[] = {
 };
 str_delim = strtok(opcode, delim);
 info.arg = strtok(NULL, " \n\t");
+/*start
+if (strchr(info.arg, ';') != NULL)
+{
+for (m = 0, n = 0; m < strlen(info.arg); m++) 
+{
+fprintf(stderr, "in for\n");
+if (info.arg[m] != ';') 
+{
+arg_semi[n] = info.arg[m];
+}
+n++;
+}
+arg_semi[n] = '\0';
+fprintf(stderr, "%s\n", arg_semi);
+strcpy(info.arg, arg_semi);
+}
+fprintf(stderr, "%s\n", info.arg);
+end*/
 if (str_delim && str_delim[0] == '#')
 return;
 
@@ -46,3 +64,4 @@ free(opcode);
 free_stack(*stack);
 exit(EXIT_FAILURE);
 }
+
