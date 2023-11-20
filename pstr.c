@@ -11,17 +11,14 @@ stack_t *temp ;
 (void)  line_number;
 if (*stack == NULL)
 {
-return;
+fprintf(stdout, "0");
 }
 else
 {
 temp = *stack;
 while (temp)
 {
-if ( temp->n == 0)
-break;
-
-else if (temp->n > 0 && temp->n <= 127)
+if (temp->n > 0 && temp->n < 127)
 {
 fprintf(stdout, "%c", temp->n);
 temp = temp->next;
