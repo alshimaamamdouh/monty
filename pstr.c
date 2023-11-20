@@ -11,7 +11,8 @@ stack_t *temp ;
 (void)  line_number;
 if (*stack == NULL)
 {
-fprintf(stdout, "0");
+printf("\n");
+return;
 }
 else
 {
