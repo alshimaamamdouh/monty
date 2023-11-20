@@ -37,5 +37,10 @@ free_stack(*stack);
 exit(EXIT_FAILURE);
 }
 num = atoi(info.arg);
+
+if (info.is_qu)
+_addqueue(stack, num);
+
+else
 _addnode(stack, num);
 }
