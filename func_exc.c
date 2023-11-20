@@ -26,6 +26,7 @@ instruction_t instructions[] = {
 {"mul", _mul},
 {"mod", _mod},
 {"pchar", _pchar},
+{"pstr", _pstr},
 {NULL, NULL}
 };
 str_delim = strtok(opcode, delim);
